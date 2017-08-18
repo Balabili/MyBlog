@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "ArticleDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    @Html.Partial("~/Views/Component/ArticleDetails.cshtml")
+    @Html.Partial("~/Views/Component/ArticleComments.cshtml")
+    @Html.Partial("~/Views/Component/AddArticleComments.cshtml")
+</div>
+
+@section scripts{
+    <script>
+        var articleModel = @Html.Raw(Json.Encode(Model));
+        var cookieUser = @Html.Raw(Json.Encode(ViewData["Viewer"]));
+    </script>
+    <script src="~/scripts/Common/require.js" data-main="/scripts/home/articleDetails"></script>
+}

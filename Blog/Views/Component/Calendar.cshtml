@@ -1,0 +1,21 @@
+﻿<div class="calendar-component">
+    <div class="text-center">
+        <a v-on:click="changeCalendar(false)" style="position:absolute;left:10px;"><</a>
+        <span style="width:100px;">{{date.yearMonthFormat}}</span>
+        <a v-on:click="changeCalendar(true)" style="position:absolute;right:10px;">></a>
+        <table class="calendar-table">
+            <thead>
+                <tr>
+                    <td>7</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                </tr>
+            </thead>
+            <tbody id="calendar-body"></tbody>
+        </table>
+    </div>
+</div>

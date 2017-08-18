@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Admin</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Common.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="admin-container" id="app" v-cloak>
+        @RenderBody()
+    </div>
+
+    <script src="~/Scripts/Common/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/Common/bootstrap.js"></script>
+    <script src="~/scripts/Common/vue.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

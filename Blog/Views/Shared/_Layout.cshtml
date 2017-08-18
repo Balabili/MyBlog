@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Common.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="container header">
+        <div class="header-title">
+            <span>SXC</span>
+        </div>
+        <div class="header-nav">
+            <ul>
+                <li><a href="/Home/Index">Home</a></li>
+                <li class="has-dropdown-list">
+                    <a>Article</a>
+                    <ul id="bDropdownList" class="display-none">
+                        <li><div>Technology</div></li>
+                        <li><div>Essays</div></li>
+                        <li><div>Others</div></li>
+                    </ul>
+                </li>
+                <li><a>Nothing</a></li>
+                <li><a href="/Admin/Index">Admin</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="app" v-cloak class="container body-content">
+        <div class="content-left">
+            @RenderBody()
+        </div>
+        <div class="content-right">
+            <div>
+                @Html.Partial("~/Views/Component/Search.cshtml")
+            </div>
+            <div class="margin-top">
+                @Html.Partial("~/Views/Component/Calendar.cshtml")
+            </div>
+            <div class="margin-top">
+                @Html.Partial("~/Views/Component/ArticleStatistics.cshtml")
+            </div>
+            <div class="margin-top">
+                @Html.Partial("~/Views/Component/ArticlesWriteMonth.cshtml")
+            </div>
+        </div>
+    </div>
+
+    <div class="footer container margin-top" style="text-align:center;">
+        <span>This is the third test.</span>
+    </div>
+
+    <div id="backTop"  class="back-to-top">
+        Top
+    </div>
+
+    <script src="~/Scripts/Common/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/Common/bootstrap.js"></script>
+    <script src="~/scripts/Common/vue.js"></script>
+    @*<script src="~/scripts/Common/require.js" data-main="/scripts/common"></script>*@
+    @RenderSection("scripts", required: false)
+</body>
+</html>

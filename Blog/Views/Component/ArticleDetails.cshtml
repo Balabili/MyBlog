@@ -1,0 +1,20 @@
+﻿<div class="article-detail-component">
+    <h2 class="article-detail-component-title">{{article.Title}}</h2>
+    <div class="row article-detail-component-header">
+        <span class="col-lg-4">CreateTime:{{article.CreateTime}}</span>
+        <span class="col-lg-2">Tag:{{article.Tag}}</span>
+        <span class="col-lg-3">Comments:{{article.CommentsCount}}</span>
+        <span class="col-lg-3">PageView:{{article.PageView}}</span>
+    </div>
+    <div class="article-detail-component-content" v-html="article.Content"></div>
+    <div class="article-detail-component-footer">
+        <div>
+            <span>Previsor:</span>
+            <a>Test1</a>
+        </div>
+        <div>
+            <span>Next:</span>
+            <a>Test2</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "WriteArticle";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+<h1 style="text-align:center;">Article</h1>
+<div class="write-article-content">
+    <input type="text" class="form-control" style="margin:10px auto;" id="articleTitle" placeholder="title">
+    <textarea id="articleDescription" style="width:900px;max-width:900px;height:100px;margin-bottom:10px;" placeholder="Description"></textarea>
+    <textarea id="editor_id" name="content" style="width:900px;height:300px;"></textarea>
+    <div style="margin-top:10px;">
+        <label for="tagList">Tag:</label>
+        <select id="tagList" class="form-control" style="display:inline-block;">
+            <option v-for="tag in tagList" v-bind:value="tag">{{tag}}</option>
+        </select>
+        <div style="float:right;">
+            <button type="button" v-on:click="saveArticle(false)" v-if="showSaveBtn" class="btn btn-success">Save</button>
+            <button type="button" v-on:click="saveArticle(true)" v-if="showDraftBtn" class="btn btn-primary">Draft</button>
+            <button type="button" v-on:click="restoreArticle" v-if="showRestoreBtn" class="btn btn-primary">Restore</button>
+            <button type="button" v-on:click="deleteArticle" v-if="showDeleteBtn" class="btn btn-danger">Delete</button>
+            <button type="button" v-on:click="cancelToAdminPage" class="btn btn-default">Cancel</button>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+    <script>
+        var pageModel = @Html.Raw(Json.Encode(Model));
+    </script>
+    <script charset="utf-8" src="~/scripts/editor/kindeditor.js"></script>
+    <script charset="utf-8" src="~/scripts/editor/lang/zh_CN.js"></script>
+    <script src="~/scripts/Common/require.js" data-main="/scripts/writeArticle"></script>
+}

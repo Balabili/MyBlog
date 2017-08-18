@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Hello";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <div>
+        @Html.Partial("~/Views/Component/ArticleDescription.cshtml")
+    </div>
+    <div class="margin-top">
+        @Html.Partial("~/Views/Component/Pager.cshtml")
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        var pageModel = @Html.Raw(Json.Encode(Model));
+    </script>
+    <script src="~/scripts/Common/require.js" data-main="/scripts/home/home"></script>
+}

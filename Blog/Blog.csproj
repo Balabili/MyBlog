@@ -1,0 +1,543 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D891A763-5921-4008-BA4B-6536DE5C6188}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Blog</RootNamespace>
+    <AssemblyName>Blog</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LitJson, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ThirdDlls\LitJson.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.1.2.3\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.1.2.3\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.1.2.3\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.1.2.3\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.1.2.3\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=1.2.3.490, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.1.2.3\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ValueTuple, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.3.0\lib\portable-net40+sl4+win8+wp8\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Common.css" />
+    <Content Include="Content\image\cloud.jpg" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="scripts\admin.js" />
+    <Content Include="scripts\common.js" />
+    <Content Include="scripts\Common\bootstrap.js" />
+    <Content Include="scripts\Common\bootstrap.min.js" />
+    <Content Include="scripts\Common\jquery-1.10.2.js" />
+    <Content Include="scripts\Common\jquery-1.10.2.min.js" />
+    <Content Include="scripts\Common\require.js" />
+    <Content Include="scripts\Common\vue.js" />
+    <Content Include="scripts\Common\zh_CN.js" />
+    <Content Include="scripts\home\articleDetails.js" />
+    <Content Include="scripts\home\home.js" />
+    <Content Include="scripts\Common\kindeditor.js" />
+    <Content Include="scripts\editor\asp.net\bin\LitJSON.dll" />
+    <Content Include="scripts\editor\asp.net\demo.aspx" />
+    <Content Include="scripts\editor\asp.net\README.txt" />
+    <Content Include="scripts\editor\asp\demo.asp" />
+    <Content Include="scripts\editor\asp\file_manager_json.asp" />
+    <Content Include="scripts\editor\asp\JSON_2.0.4.asp" />
+    <Content Include="scripts\editor\asp\UpLoad_Class.asp" />
+    <Content Include="scripts\editor\asp\upload_json.asp" />
+    <Content Include="scripts\editor\examples\auto-height.html" />
+    <Content Include="scripts\editor\examples\colorpicker.html" />
+    <Content Include="scripts\editor\examples\custom-plugin.html" />
+    <Content Include="scripts\editor\examples\custom-theme.html" />
+    <Content Include="scripts\editor\examples\default.html" />
+    <Content Include="scripts\editor\examples\dialog.html" />
+    <Content Include="scripts\editor\examples\dynamic-load.html" />
+    <Content Include="scripts\editor\examples\file-dialog.html" />
+    <Content Include="scripts\editor\examples\file-manager.html" />
+    <Content Include="scripts\editor\examples\filter-mode.html" />
+    <Content Include="scripts\editor\examples\image-dialog.html" />
+    <Content Include="scripts\editor\examples\index.css" />
+    <Content Include="scripts\editor\examples\index.html" />
+    <Content Include="scripts\editor\examples\jquery-ui.html" />
+    <Content Include="scripts\editor\examples\jquery-ui\css\smoothness\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="scripts\editor\examples\jquery-ui\css\smoothness\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="scripts\editor\examples\jquery-ui\css\smoothness\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="scripts\editor\examples\jquery-ui\css\smoothness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="scripts\editor\examples\jquery-ui\css\smoothness\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="scripts\editor\examples\jquery-ui\css\smoothness\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="scripts\editor\examples\jquery-ui\css\smoothness\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="scripts\editor\examples\jquery-ui\css\smoothness\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="scripts\editor\examples\jquery-ui\css\smoothness\images\ui-icons_222222_256x240.png" />
+    <Content Include="scripts\editor\examples\jquery-ui\css\smoothness\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="scripts\editor\examples\jquery-ui\css\smoothness\images\ui-icons_454545_256x240.png" />
+    <Content Include="scripts\editor\examples\jquery-ui\css\smoothness\images\ui-icons_888888_256x240.png" />
+    <Content Include="scripts\editor\examples\jquery-ui\css\smoothness\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="scripts\editor\examples\jquery-ui\css\smoothness\jquery-ui-1.9.2.custom.css" />
+    <Content Include="scripts\editor\examples\jquery-ui\css\smoothness\jquery-ui-1.9.2.custom.min.css" />
+    <Content Include="scripts\editor\examples\jquery-ui\js\jquery-ui-1.9.2.custom.js" />
+    <Content Include="scripts\editor\examples\jquery-ui\js\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="scripts\editor\examples\jquery.html" />
+    <Content Include="scripts\editor\examples\jquery.js" />
+    <Content Include="scripts\editor\examples\multi-image-dialog.html" />
+    <Content Include="scripts\editor\examples\multi-language.html" />
+    <Content Include="scripts\editor\examples\newline.html" />
+    <Content Include="scripts\editor\examples\node.html" />
+    <Content Include="scripts\editor\examples\paste-type.html" />
+    <Content Include="scripts\editor\examples\qqstyle.html" />
+    <Content Include="scripts\editor\examples\readonly.html" />
+    <Content Include="scripts\editor\examples\simple.html" />
+    <Content Include="scripts\editor\examples\uploadbutton.html" />
+    <Content Include="scripts\editor\examples\url-type.html" />
+    <Content Include="scripts\editor\examples\word-count.html" />
+    <Content Include="scripts\editor\kindeditor-all-min.js" />
+    <Content Include="scripts\editor\kindeditor-all.js" />
+    <Content Include="scripts\editor\kindeditor-min.js" />
+    <Content Include="scripts\editor\kindeditor.js" />
+    <Content Include="scripts\editor\lang\ar.js" />
+    <Content Include="scripts\editor\lang\en.js" />
+    <Content Include="scripts\editor\lang\ko.js" />
+    <Content Include="scripts\editor\lang\zh_CN.js" />
+    <Content Include="scripts\editor\lang\zh_TW.js" />
+    <Content Include="scripts\editor\license.txt" />
+    <Content Include="scripts\editor\plugins\anchor\anchor.js" />
+    <Content Include="scripts\editor\plugins\autoheight\autoheight.js" />
+    <Content Include="scripts\editor\plugins\baidumap\baidumap.js" />
+    <Content Include="scripts\editor\plugins\baidumap\index.html" />
+    <Content Include="scripts\editor\plugins\baidumap\map.html" />
+    <Content Include="scripts\editor\plugins\clearhtml\clearhtml.js" />
+    <Content Include="scripts\editor\plugins\code\code.js" />
+    <Content Include="scripts\editor\plugins\code\prettify.css" />
+    <Content Include="scripts\editor\plugins\code\prettify.js" />
+    <Content Include="scripts\editor\plugins\emoticons\emoticons.js" />
+    <Content Include="scripts\editor\plugins\emoticons\images\0.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\1.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\10.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\100.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\101.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\102.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\103.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\104.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\105.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\106.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\107.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\108.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\109.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\11.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\110.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\111.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\112.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\113.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\114.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\115.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\116.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\117.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\118.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\119.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\12.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\120.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\121.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\122.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\123.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\124.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\125.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\126.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\127.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\128.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\129.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\13.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\130.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\131.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\132.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\133.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\134.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\14.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\15.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\16.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\17.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\18.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\19.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\2.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\20.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\21.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\22.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\23.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\24.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\25.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\26.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\27.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\28.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\29.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\3.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\30.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\31.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\32.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\33.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\34.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\35.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\36.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\37.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\38.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\39.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\4.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\40.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\41.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\42.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\43.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\44.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\45.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\46.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\47.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\48.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\49.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\5.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\50.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\51.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\52.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\53.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\54.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\55.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\56.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\57.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\58.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\59.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\6.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\60.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\61.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\62.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\63.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\64.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\65.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\66.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\67.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\68.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\69.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\7.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\70.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\71.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\72.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\73.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\74.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\75.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\76.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\77.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\78.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\79.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\8.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\80.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\81.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\82.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\83.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\84.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\85.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\86.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\87.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\88.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\89.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\9.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\90.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\91.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\92.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\93.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\94.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\95.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\96.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\97.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\98.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\99.gif" />
+    <Content Include="scripts\editor\plugins\emoticons\images\static.gif" />
+    <Content Include="scripts\editor\plugins\filemanager\filemanager.js" />
+    <Content Include="scripts\editor\plugins\filemanager\images\file-16.gif" />
+    <Content Include="scripts\editor\plugins\filemanager\images\file-64.gif" />
+    <Content Include="scripts\editor\plugins\filemanager\images\folder-16.gif" />
+    <Content Include="scripts\editor\plugins\filemanager\images\folder-64.gif" />
+    <Content Include="scripts\editor\plugins\filemanager\images\go-up.gif" />
+    <Content Include="scripts\editor\plugins\flash\flash.js" />
+    <Content Include="scripts\editor\plugins\image\image.js" />
+    <Content Include="scripts\editor\plugins\image\images\align_left.gif" />
+    <Content Include="scripts\editor\plugins\image\images\align_right.gif" />
+    <Content Include="scripts\editor\plugins\image\images\align_top.gif" />
+    <Content Include="scripts\editor\plugins\image\images\refresh.png" />
+    <Content Include="scripts\editor\plugins\insertfile\insertfile.js" />
+    <Content Include="scripts\editor\plugins\lineheight\lineheight.js" />
+    <Content Include="scripts\editor\plugins\link\link.js" />
+    <Content Include="scripts\editor\plugins\map\map.html" />
+    <Content Include="scripts\editor\plugins\map\map.js" />
+    <Content Include="scripts\editor\plugins\media\media.js" />
+    <Content Include="scripts\editor\plugins\multiimage\images\image.png" />
+    <Content Include="scripts\editor\plugins\multiimage\images\select-files-en.png" />
+    <Content Include="scripts\editor\plugins\multiimage\images\select-files-zh_CN.png" />
+    <Content Include="scripts\editor\plugins\multiimage\images\swfupload.swf" />
+    <Content Include="scripts\editor\plugins\multiimage\multiimage.js" />
+    <Content Include="scripts\editor\plugins\pagebreak\pagebreak.js" />
+    <Content Include="scripts\editor\plugins\plainpaste\plainpaste.js" />
+    <Content Include="scripts\editor\plugins\preview\preview.js" />
+    <Content Include="scripts\editor\plugins\quickformat\quickformat.js" />
+    <Content Include="scripts\editor\plugins\table\table.js" />
+    <Content Include="scripts\editor\plugins\template\html\1.html" />
+    <Content Include="scripts\editor\plugins\template\html\2.html" />
+    <Content Include="scripts\editor\plugins\template\html\3.html" />
+    <Content Include="scripts\editor\plugins\template\template.js" />
+    <Content Include="scripts\editor\plugins\wordpaste\wordpaste.js" />
+    <Content Include="scripts\editor\themes\common\anchor.gif" />
+    <Content Include="scripts\editor\themes\common\blank.gif" />
+    <Content Include="scripts\editor\themes\common\flash.gif" />
+    <Content Include="scripts\editor\themes\common\loading.gif" />
+    <Content Include="scripts\editor\themes\common\media.gif" />
+    <Content Include="scripts\editor\themes\common\rm.gif" />
+    <Content Include="scripts\editor\themes\default\background.png" />
+    <Content Include="scripts\editor\themes\default\default.css" />
+    <Content Include="scripts\editor\themes\default\default.png" />
+    <Content Include="scripts\editor\themes\qq\editor.gif" />
+    <Content Include="scripts\editor\themes\qq\qq.css" />
+    <Content Include="scripts\editor\themes\simple\simple.css" />
+    <Content Include="scripts\utility\utility.js" />
+    <Content Include="scripts\writeArticle.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="AutoMapper\AutoMapper.cs" />
+    <Compile Include="AutoMapper\SetUpAutoMapper.cs" />
+    <Compile Include="Common\CommonWebService.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ArticleModel.cs" />
+    <Compile Include="Models\CommentModel.cs" />
+    <Compile Include="Models\HomePageModel.cs" />
+    <Compile Include="Models\LayoutComponentModel.cs" />
+    <Compile Include="Models\StatisticModel.cs" />
+    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Models\WriteMonthModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Component\Search.cshtml" />
+    <Content Include="Views\Component\ArticleStatistics.cshtml" />
+    <Content Include="Views\Component\ArticlesWriteMonth.cshtml" />
+    <Content Include="Views\Component\UserInfomation.cshtml" />
+    <Content Include="Views\Component\Calendar.cshtml" />
+    <Content Include="Views\Component\ArticleDescription.cshtml" />
+    <Content Include="Views\Component\Pager.cshtml" />
+    <Content Include="Views\Admin\WriteArticle.cshtml" />
+    <Content Include="Views\Shared\Admin_Layout.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="scripts\editor\asp.net\file_manager_json.ashx" />
+    <Content Include="scripts\editor\asp.net\upload_json.ashx" />
+    <Content Include="Views\Home\ArticleDetails.cshtml" />
+    <Content Include="Views\Component\ArticleDetails.cshtml" />
+    <Content Include="Views\Component\ArticleComments.cshtml" />
+    <Content Include="Views\Component\AddArticleComments.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="scripts\editor\attached\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Blog.Domain\Blog.Domain.csproj">
+      <Project>{4f1936e9-ba24-4ef4-bc0e-da9b92e516a3}</Project>
+      <Name>Blog.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Blog.IRepository\Blog.IRepository.csproj">
+      <Project>{56566af2-4921-427e-a6cc-cb86b5f02d83}</Project>
+      <Name>Blog.IRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Blog.IService\Blog.IService.csproj">
+      <Project>{2f4a5fcc-4610-46af-9c2b-4c0982b31f8b}</Project>
+      <Name>Blog.IService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Blog.Repository\Blog.Repository.csproj">
+      <Project>{54d036e3-8424-41df-a0ff-d440bd823e5a}</Project>
+      <Name>Blog.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Blog.Service\Blog.Service.csproj">
+      <Project>{50a38110-e0dd-4932-99cd-9e6818db0f85}</Project>
+      <Name>Blog.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Blog.Utility\Blog.Utility.csproj">
+      <Project>{be9f3fa8-3694-4432-b255-a827d64b6c62}</Project>
+      <Name>Blog.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>44552</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:44552/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,5 @@
+﻿<div class="article-statistics-component">
+    <ul class="article-statistics-list">
+        <li v-for="statistic in statistics" v-bind:id="statistic" v-bind:title="statistic" v-on:click="getArticlesWithStatistic"><a>{{statistic.Statistic}}({{statistic.Count}})</a></li>
+    </ul>
+</div>

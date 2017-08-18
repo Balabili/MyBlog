@@ -1,0 +1,5 @@
+﻿<div class="pager-container">
+    <a v-show="showPreviousLink" v-on:click="changePage"><</a>
+    <a v-for="pager in pagers" v-bind:class="{'pager-container-actived':pager.isActive}" v-on:click="changePage">{{pager.number}}</a>
+    <a v-if="showNextLink" v-on:click="changePage">></a>
+</div>

@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+<div class="admin-left">
+    <ul id="adminList" class="admin-left-userlist">
+        <li v-on:mouseenter="activeAdminList" v-on:mouseleave="deactiveAdminList" v-on:click="changeNav"
+            v-for="list in userList" v-bind:class="{'userlist-is-actived':list.isSelect}">{{list.listName}}</li>
+    </ul>
+</div>
+<div class="admin-right">
+    <div id="admin-right-component">
+        <h1>{{header}}</h1>
+        <div class="admin-article-list-container">
+            <ul class="admin-article-list">
+                <li>
+                    <span class="admin-article-list-title">Title</span>
+                    <span class="admin-article-list-createTime">Create Time</span>
+                    <span class="admin-article-list-pageview">Pageview</span>
+                    <span class="admin-article-list-pageview">Action</span>
+                </li>
+                <li v-for="article in articleList">
+                    <span class="admin-article-list-title">{{article.Title}}</span>
+                    <span class="admin-article-list-createTime">{{article.CreateTime}}</span>
+                    <span class="admin-article-list-pageview">{{article.PageView}}</span>
+                    <a class="admin-article-list-edit" v-if="article.Status != 2" v-on:click="editArticle(article.Id)">Edit</a>
+                    <a class="admin-article-list-edit" v-if="article.Status == 0" v-on:click="submitArticle(article.Id)">Submit</a>
+                    <a class="admin-article-list-edit" v-if="article.Status == 2" v-on:click="restoreArticle(article.Id)">Restore</a>
+                    <a class="admin-article-list-edit" v-on:click="deleteArticle(article.Id)">Delete</a>
+                </li>
+                <li v-if="showNoItemNotification" class="text-center">No article here!</li>
+            </ul>
+        </div>
+        <div class="margin-top">
+            <button type="button" v-on:click="writeArticle" v-if="showWriteArticleBtn" class="btn btn-success">Write New Article</button>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+
+    </script>
+    <script src="~/scripts/Common/require.js" data-main="/scripts/admin"></script>
+}

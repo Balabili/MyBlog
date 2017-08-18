@@ -1,0 +1,20 @@
+﻿<div class="article-comment-component">
+    <div class="article-comment-component-title">Comments:</div>
+    <div class="article-comment-component-list">
+        <ul>
+            <li v-for="comment in comments" style="border-bottom:1px dashed #00ffff;">
+                <div>
+                    <b>
+                        <a href="#userName">#{{comment.Floor}}</a>
+                        <span id="userName">{{comment.User.Name}}</span>
+                    </b>
+                </div>
+                <div class="article-comment-component-list-content" v-html="comment.Content"></div>
+                <div class="article-comment-component-list-footer">
+                    <span>{{comment.CreateTime}}</span><span>|</span><a>quote</a>
+                </div>
+                <div style="clear:both;"></div>
+            </li>
+        </ul>
+    </div>
+</div>

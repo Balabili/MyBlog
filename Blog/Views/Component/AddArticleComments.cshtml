@@ -1,0 +1,18 @@
+﻿<div class="add-article-comment-component">
+    <h5>Add Comment</h5>
+    <span v-if="article.HasCookie">name:{{cookieUser.Name}}</span>
+    <div class="form-group" v-if="!article.HasCookie">
+        <input type="text" class="form-control" id="name" placeholder="Name">
+    </div>
+    <div class="form-group" v-if="!article.HasCookie">
+        <input type="text" class="form-control" id="email" placeholder="Email">
+    </div>
+    <div class="form-group">
+        <textarea class="form-control" id="commentContent"></textarea>
+    </div>
+    <div class="form-group" v-if="!article.HasCookie">
+        <input type="checkbox" id="rememberMe"><label for="rememberMe">Remember Me</label>
+    </div>
+    <button type="button" v-on:click="changeUser" v-if="article.HasCookie" class="btn btn-default">Logout</button>
+    <button type="button" v-on:click="addComment" class="btn btn-success">Save</button>
+</div>

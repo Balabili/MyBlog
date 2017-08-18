@@ -1,0 +1,20 @@
+﻿<div class="article-description-empty" v-if="articles.length==0">
+    There is no article!!
+</div>
+<div v-for="article in articles" v-bind:class="{'margin-top':!article.isTopAritcle}">
+    <div class="article-description-component" v-bind:id="article.Title">
+        <div class="article-description-header">
+            <a class="article-description-title" v-on:click="viewArticleDetails">{{article.Title}}</a>
+            <ul class="article-entry-data">
+                <li class="article-createtime">{{article.CreateTime}}</li>
+                <li class="article-tag">{{article.Tag}}</li>
+                <li class="article-comments-count">Comments:{{article.CommentsCount}}</li>
+                <li class="article-pageview">PageView:{{article.PageView}}</li>
+            </ul>
+        </div>
+        <div class="article-content-abstract" v-html="article.Description"></div>
+        <div class="article-content-footer">
+            <a v-on:click="viewArticleDetails">Read More -></a>
+        </div>
+    </div>
+</div>
